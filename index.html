@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cliniconomy – Medical Education Platform</title>
+  <style>
+    /* ── Reset & base ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 40%, #e1f5fe 100%);
+      min-height: 100vh;
+      color: #0d4f6c;
+    }
+
+    /* ── Top navigation bar ─────────────────────────────────────── */
+    header {
+      background: linear-gradient(90deg, #0288d1 0%, #00acc1 100%);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 8px rgba(2, 136, 209, 0.35);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      fill: #ffffff;
+    }
+
+    .logo-text {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      color: #e0f7fa;
+      text-decoration: none;
+      margin-left: 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #ffffff; }
+
+    /* ── Hero / banner strip ─────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(90deg, #0277bd 0%, #0288d1 50%, #039be5 100%);
+      padding: 2rem 2rem 1.8rem;
+      text-align: center;
+      border-bottom: 3px solid #4dd0e1;
+    }
+
+    .hero .cross-icon {
+      width: 56px;
+      height: 56px;
+      fill: #ffffff;
+      margin-bottom: 0.6rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      color: #e0f7fa;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+
+    /* ── Main dashboard card ─────────────────────────────────────── */
+    main {
+      max-width: 860px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2.6rem 3rem;
+      box-shadow: 0 8px 32px rgba(2, 136, 209, 0.15);
+      border-top: 5px solid #0288d1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle watermark cross */
+    .card::before {
+      content: '+';
+      position: absolute;
+      right: -20px;
+      bottom: -30px;
+      font-size: 18rem;
+      font-weight: 900;
+      color: rgba(2, 136, 209, 0.05);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .card h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #0277bd;
+      margin-bottom: 1.1rem;
+    }
+
+    .card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #1a5f7a;
+      margin-bottom: 1.1rem;
+    }
+
+    .card ul {
+      list-style: none;
+      margin: 0 0 1.3rem 0;
+      padding: 0;
+    }
+
+    .card ul li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.05rem;
+      color: #1a5f7a;
+      padding: 0.45rem 0;
+      border-bottom: 1px dashed #b2ebf2;
+    }
+
+    .card ul li:last-child { border-bottom: none; }
+
+    .card ul li::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #0288d1;
+      flex-shrink: 0;
+    }
+
+    .card .closing {
+      margin-top: 1.5rem;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #0277bd;
+      line-height: 1.8;
+    }
+
+    .card .signature {
+      font-weight: 700;
+      font-style: normal;
+      color: #01579b;
+    }
+
+    /* ── Feature pills row ───────────────────────────────────────── */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.6rem 0 0.2rem;
+    }
+
+    .pill {
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      border: 1.5px solid #4dd0e1;
+      border-radius: 999px;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #0277bd;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.85rem;
+      color: #0277bd;
+      opacity: 0.75;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .card { padding: 1.8rem 1.4rem; }
+      .card h2 { font-size: 1.4rem; }
+      .hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation bar ───────────────────────────────────────── -->
+  <header>
+    <a class="logo" href="#">
+      <!-- Medical cross SVG -->
+      <svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <rect x="24" y="4" width="16" height="56" rx="4"/>
+        <rect x="4" y="24" width="56" height="16" rx="4"/>
+      </svg>
+      <span class="logo-text">Cliniconomy</span>
+    </a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Lectures</a>
+      <a href="#">MCQs</a>
+      <a href="#">Resources</a>
+    </nav>
+  </header>
+
+  <!-- ── Hero banner ──────────────────────────────────────────── -->
+  <div class="hero">
+    <!-- Stethoscope-style SVG icon -->
+    <svg class="cross-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <rect x="24" y="4" width="16" height="56" rx="4"/>
+      <rect x="4" y="24" width="56" height="16" rx="4"/>
+    </svg>
+    <h1>Welcome to Cliniconomy</h1>
+    <p class="tagline">Learn smarter. Prepare better. Grow together.</p>
+  </div>
+
+  <!-- ── Dashboard card ───────────────────────────────────────── -->
+  <main>
+    <div class="card">
+
+      <h2>Welcome to Cliniconomy</h2>
+
+      <p>
+        A student-led medical education platform built to simplify MBBS learning through
+        structured clinical teaching, smart preparation tools, and a strong academic community.
+      </p>
+
+      <p>
+        Founded by <strong>Syed Muhammad Usman Shah</strong>, an MBBS student at Bacha Khan
+        Medical College, Cliniconomy was created with a vision to make medical education more
+        practical, organized, and student-focused.
+      </p>
+
+      <p>The platform currently provides:</p>
+
+      <ul>
+        <li>Clinical examination lectures</li>
+        <li>Structured MBBS learning resources</li>
+        <li>MCQ-based exam preparation</li>
+        <li>Academic guidance and community support</li>
+      </ul>
+
+      <p>
+        Our goal is not only to teach topics, but to help medical students understand concepts
+        clinically, prepare confidently for exams, and grow throughout their MBBS journey.
+      </p>
+
+      <p>
+        Cliniconomy is starting with Upper and Lower Limb clinicals, but the long-term vision is
+        to build a complete preparation workspace for MBBS students — combining lectures, exams,
+        resources, planning tools, and community learning in one platform.
+      </p>
+
+      <!-- Quick feature tags -->
+      <div class="features">
+        <span class="pill">🩺 Clinical Exams</span>
+        <span class="pill">📚 MBBS Resources</span>
+        <span class="pill">✏️ MCQ Prep</span>
+        <span class="pill">🤝 Community</span>
+        <span class="pill">🦾 Upper Limb</span>
+        <span class="pill">🦵 Lower Limb</span>
+      </div>
+
+      <p class="closing">
+        Learn smarter. Prepare better. Grow together.<br>
+        <br>
+        — <span class="signature">Cliniconomy</span>
+      </p>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Cliniconomy · Built by Syed Muhammad Usman Shah · Bacha Khan Medical College
+  </footer>
+
+</body>
+</html>
