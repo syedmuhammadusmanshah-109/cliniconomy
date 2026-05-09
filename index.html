@@ -65,6 +65,7 @@
       padding: 2rem 2rem 1.8rem;
       text-align: center;
       border-bottom: 3px solid #1e88e5;
+      animation: slideInDown 0.8s ease-out;
     }
 
     .hero .cross-icon {
@@ -81,6 +82,7 @@
       color: #ffffff;
       letter-spacing: 1px;
       text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      animation: fadeInUp 1s ease-out 0.2s backwards;
     }
 
     .hero .tagline {
@@ -88,6 +90,7 @@
       color: #b3e5fc;
       margin-top: 0.4rem;
       font-style: italic;
+      animation: fadeInUp 1s ease-out 0.4s backwards;
     }
 
     /* ── Logo section with dark background ─────────────────────── */
@@ -99,6 +102,7 @@
       flex-direction: column;
       align-items: center;
       gap: 2rem;
+      animation: fadeIn 0.6s ease-out;
     }
 
     .logo-container {
@@ -106,6 +110,7 @@
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      animation: zoomIn 0.8s ease-out;
     }
 
     .logo-container img {
@@ -113,19 +118,74 @@
       height: 200px;
       object-fit: contain;
       filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1));
+      animation: fadeInScale 1s ease-out;
     }
 
     .logo-text-content {
-      color: #ffffff;
+      color: #1e88e5;
       font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #1e88e5;
       text-shadow: 0 2px 8px rgba(30, 136, 229, 0.3);
+      animation: fadeInUp 1s ease-out 0.3s backwards;
     }
 
-    /* ── Main dashboard card ─────────────────────────────────────── */
+    /* ── Animations ──────────────────────────────────────────────── */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* ── Main dashboard card ─────��───────────────────────────────── */
     main {
       max-width: 860px;
       margin: 2.5rem auto 3rem;
@@ -140,6 +200,7 @@
       border-top: 5px solid #0d47a1;
       position: relative;
       overflow: hidden;
+      animation: fadeInUp 0.8s ease-out 0.6s backwards;
     }
 
     /* subtle watermark cross */
@@ -275,9 +336,9 @@
   <!-- ── Logo section with dark background ───────────────────── -->
   <div class="logo-section">
     <div class="logo-container">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3Cstyle%3E.doctor%7Bfill:%23001f3f%7D.bg%7Bfill:%23ffffff%7D%3C/style%3E%3C/defs%3E%3Ccircle class='bg' cx='200' cy='200' r='190'/%3E%3Cg class='doctor'%3E%3Cpath d='M200 80c33.137 0 60 26.863 60 60s-26.863 60-60 60-60-26.863-60-60 26.863-60 60-60z'/%3E%3Cpath d='M200 220c-55.228 0-100 44.772-100 100v40h200v-40c0-55.228-44.772-100-100-100z'/%3E%3Ccircle cx='160' cy='260' r='12' fill='%231e88e5'/%3E%3Ccircle cx='240' cy='260' r='12' fill='%231e88e5'/%3E%3Cpath d='M200 260c0 15-25 25-25 25M200 260c0 15 25 25 25 25' stroke='%231e88e5' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E" alt="Cliniconomy Logo">
+      <img src="logo.png" alt="Cliniconomy Logo - Doctor with Stethoscope">
     </div>
-    <div class="logo-text-content">CLINICONOMY</div>
+    <div class="logo-text-content">Cliniconomy</div>
   </div>
 
   <!-- ── Hero banner ──────────────────────────────────────────── -->
