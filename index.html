@@ -10,20 +10,20 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 40%, #e1f5fe 100%);
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 40%, #c5cae9 100%);
       min-height: 100vh;
-      color: #0d4f6c;
+      color: #1a237e;
     }
 
     /* ── Top navigation bar ─────────────────────────────────────── */
     header {
-      background: linear-gradient(90deg, #0288d1 0%, #00acc1 100%);
+      background: linear-gradient(90deg, #001f3f 0%, #0d47a1 100%);
       padding: 0 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 64px;
-      box-shadow: 0 2px 8px rgba(2, 136, 209, 0.35);
+      box-shadow: 0 2px 8px rgba(0, 31, 63, 0.35);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -50,7 +50,7 @@
     }
 
     nav a {
-      color: #e0f7fa;
+      color: #b3e5fc;
       text-decoration: none;
       margin-left: 1.6rem;
       font-size: 0.95rem;
@@ -61,10 +61,10 @@
 
     /* ── Hero / banner strip ─────────────────────────────────────── */
     .hero {
-      background: linear-gradient(90deg, #0277bd 0%, #0288d1 50%, #039be5 100%);
+      background: linear-gradient(90deg, #001f3f 0%, #0d47a1 50%, #1565c0 100%);
       padding: 2rem 2rem 1.8rem;
       text-align: center;
-      border-bottom: 3px solid #4dd0e1;
+      border-bottom: 3px solid #1e88e5;
     }
 
     .hero .cross-icon {
@@ -85,9 +85,44 @@
 
     .hero .tagline {
       font-size: 1rem;
-      color: #e0f7fa;
+      color: #b3e5fc;
       margin-top: 0.4rem;
       font-style: italic;
+    }
+
+    /* ── Logo section with dark background ─────────────────────── */
+    .logo-section {
+      background: #1a1a2e;
+      padding: 3rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .logo-container {
+      background: #0f0f1e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo-container img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1));
+    }
+
+    .logo-text-content {
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #1e88e5;
+      text-shadow: 0 2px 8px rgba(30, 136, 229, 0.3);
     }
 
     /* ── Main dashboard card ─────────────────────────────────────── */
@@ -101,8 +136,8 @@
       background: #ffffff;
       border-radius: 16px;
       padding: 2.6rem 3rem;
-      box-shadow: 0 8px 32px rgba(2, 136, 209, 0.15);
-      border-top: 5px solid #0288d1;
+      box-shadow: 0 8px 32px rgba(13, 71, 161, 0.15);
+      border-top: 5px solid #0d47a1;
       position: relative;
       overflow: hidden;
     }
@@ -115,7 +150,7 @@
       bottom: -30px;
       font-size: 18rem;
       font-weight: 900;
-      color: rgba(2, 136, 209, 0.05);
+      color: rgba(13, 71, 161, 0.05);
       line-height: 1;
       pointer-events: none;
       user-select: none;
@@ -124,14 +159,14 @@
     .card h2 {
       font-size: 1.75rem;
       font-weight: 800;
-      color: #0277bd;
+      color: #0d47a1;
       margin-bottom: 1.1rem;
     }
 
     .card p {
       font-size: 1.05rem;
       line-height: 1.8;
-      color: #1a5f7a;
+      color: #1a237e;
       margin-bottom: 1.1rem;
     }
 
@@ -146,9 +181,9 @@
       align-items: center;
       gap: 0.7rem;
       font-size: 1.05rem;
-      color: #1a5f7a;
+      color: #1a237e;
       padding: 0.45rem 0;
-      border-bottom: 1px dashed #b2ebf2;
+      border-bottom: 1px dashed #bbdefb;
     }
 
     .card ul li:last-child { border-bottom: none; }
@@ -159,7 +194,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #0288d1;
+      background: #0d47a1;
       flex-shrink: 0;
     }
 
@@ -167,14 +202,14 @@
       margin-top: 1.5rem;
       font-size: 1.05rem;
       font-style: italic;
-      color: #0277bd;
+      color: #0d47a1;
       line-height: 1.8;
     }
 
     .card .signature {
       font-weight: 700;
       font-style: normal;
-      color: #01579b;
+      color: #001f3f;
     }
 
     /* ── Feature pills row ───────────────────────────────────────── */
@@ -186,13 +221,13 @@
     }
 
     .pill {
-      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
-      border: 1.5px solid #4dd0e1;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      border: 1.5px solid #1e88e5;
       border-radius: 999px;
       padding: 0.4rem 1.1rem;
       font-size: 0.88rem;
       font-weight: 600;
-      color: #0277bd;
+      color: #0d47a1;
       display: flex;
       align-items: center;
       gap: 0.4rem;
@@ -203,7 +238,7 @@
       text-align: center;
       padding: 1.2rem;
       font-size: 0.85rem;
-      color: #0277bd;
+      color: #0d47a1;
       opacity: 0.75;
     }
 
@@ -212,6 +247,8 @@
       .card { padding: 1.8rem 1.4rem; }
       .card h2 { font-size: 1.4rem; }
       .hero h1 { font-size: 1.6rem; }
+      .logo-container img { width: 150px; height: 150px; }
+      .logo-text-content { font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -234,6 +271,14 @@
       <a href="#">Resources</a>
     </nav>
   </header>
+
+  <!-- ── Logo section with dark background ───────────────────── -->
+  <div class="logo-section">
+    <div class="logo-container">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3Cstyle%3E.doctor%7Bfill:%23001f3f%7D.bg%7Bfill:%23ffffff%7D%3C/style%3E%3C/defs%3E%3Ccircle class='bg' cx='200' cy='200' r='190'/%3E%3Cg class='doctor'%3E%3Cpath d='M200 80c33.137 0 60 26.863 60 60s-26.863 60-60 60-60-26.863-60-60 26.863-60 60-60z'/%3E%3Cpath d='M200 220c-55.228 0-100 44.772-100 100v40h200v-40c0-55.228-44.772-100-100-100z'/%3E%3Ccircle cx='160' cy='260' r='12' fill='%231e88e5'/%3E%3Ccircle cx='240' cy='260' r='12' fill='%231e88e5'/%3E%3Cpath d='M200 260c0 15-25 25-25 25M200 260c0 15 25 25 25 25' stroke='%231e88e5' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E" alt="Cliniconomy Logo">
+    </div>
+    <div class="logo-text-content">CLINICONOMY</div>
+  </div>
 
   <!-- ── Hero banner ──────────────────────────────────────────── -->
   <div class="hero">
