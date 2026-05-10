@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cliniconomy Dashboard</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy-950: #020817;
+      --navy-900: #061530;
+      --navy-800: #09224a;
+      --white: #ffffff;
+      --text-soft: #dbeafe;
+      --line: rgba(188, 233, 255, 0.22);
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 25% 20%, rgba(37, 99, 235, 0.2), transparent 24rem),
+        linear-gradient(135deg, var(--navy-950), var(--navy-900) 58%, var(--navy-800));
+    }
+
+    header {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      border-bottom: 1px solid var(--line);
+      background: rgba(2, 8, 23, 0.76);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 1.18rem;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      object-position: 50% 62%;
+      border-radius: 50%;
+      background: #030712;
+    }
+
+    .back-link {
+      color: var(--text-soft);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .dashboard {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .placeholder {
+      width: min(620px, 100%);
+      padding: clamp(2rem, 6vw, 4rem);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.055);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .placeholder h1 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .placeholder p {
+      margin-top: 1rem;
+      color: var(--text-soft);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 560px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html" aria-label="Back to Cliniconomy home">
+      <img src="logo.png" alt="" />
+      <span>Cliniconomy</span>
+    </a>
+    <a class="back-link" href="index.html">Back</a>
+  </header>
+
+  <main class="dashboard">
+    <section class="placeholder" aria-labelledby="dashboard-title">
+      <h1 id="dashboard-title">Not developed yet</h1>
+      <p>The dashboard page is ready as a placeholder for future course features.</p>
+    </section>
+  </main>
+</body>
+</html>
